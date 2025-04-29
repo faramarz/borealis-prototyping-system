@@ -86,16 +86,29 @@ const NavigationMenuContent = React.forwardRef<
 ))
 NavigationMenuContent.displayName = "NavigationMenuContent"
 
+interface NavigationMenuLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  active?: boolean;
+  children: React.ReactNode;
+}
+
 const NavigationMenuLink = React.forwardRef<
   HTMLAnchorElement,
-  React.AnchorHTMLAttributes<HTMLAnchorElement>
->(({ className, ...props }, ref) => (
-  <a
-    ref={ref}
-    className={cn(navigationMenuTriggerStyle(), className)}
-    {...props}
-  />
-))
+  NavigationMenuLinkProps
+>(({ className, active, children, ...props }, ref) => {
+  return (
+    <a
+      ref={ref}
+      className={cn(
+        navigationMenuTriggerStyle(),
+        active && "bg-accent text-accent-foreground",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </a>
+  )
+})
 NavigationMenuLink.displayName = "NavigationMenuLink"
 
 const NavigationMenuViewport = React.forwardRef<
