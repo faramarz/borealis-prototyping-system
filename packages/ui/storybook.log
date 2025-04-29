@@ -1,0 +1,6 @@
+../..                                    |  WARN  `node_modules` is present. Lockfile only installation will make it out-of-date
+../..                                    | Progress: resolved 1, reused 0, downloaded 0, added 0
+ WARN  deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+../../apps/web                           |  WARN  deprecated @storybook/testing-library@0.2.2
+../..                                    | Progress: resolved 242, reused 0, downloaded 0, added 0
+../..                                    | Progress: resolved 912, reused 0, downloaded 0, added 0
